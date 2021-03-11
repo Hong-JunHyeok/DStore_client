@@ -1,10 +1,13 @@
-import { getRequest } from 'lib/axios';
+import * as api from 'lib/api';
 import * as Pages from 'pages';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import 'styles/App.scss';
 
 function App() {
+  useEffect(() => {
+    console.log(api.getRequest('/user'));
+  }, []);
   return (
     <Router>
       <Switch>
